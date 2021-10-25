@@ -89,7 +89,7 @@ def ThetaWorker(wallet, thread):
             print()
 
 def ToCSV():   
-    with open("Theta-Staking-Rewards/tx.csv","w", newline="") as f:
+    with open("tx.csv","w", newline="") as f:
         wr = csv.writer(f)
         wr.writerow(["tx_hash", "timestamp","thetawei", "tfuelwei"])
 
