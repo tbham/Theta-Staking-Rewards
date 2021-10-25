@@ -89,7 +89,7 @@ def ThetaWorker(wallet, thread):
                         tfuelwei = Decimal(int(y['coins']['tfuelwei'])/wei)
 
                         csv_row = [tx_hash, timestamp, thetawei, tfuelwei]
-                        print("Queued: %s" %(thread,csv_row))
+                        print("Queued: %s" %(csv_row))
                         queue.put(csv_row)
             print()
 
