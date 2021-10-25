@@ -28,6 +28,7 @@ def Theta(wallet):
     print("Requesting page 1 of %i" %(pages))
     print("Request URL: %s" %(URL))
     print("Response code: %i" %(res.status_code))
+    print("Response time: %i ms" %(res.elapsed.total_seconds()*1000))
 
     if res.status_code == 200:
         for x in res.json()['body']:
