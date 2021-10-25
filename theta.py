@@ -29,6 +29,7 @@ def Theta(wallet):
     print("Request URL: %s" %(URL))
     print("Response code: %i" %(res.status_code))
     print("Response time: %i ms" %(res.elapsed.total_seconds()*1000))
+    print()
 
     if res.status_code == 200:
         for x in res.json()['body']:
@@ -88,7 +89,7 @@ def ThetaWorker(wallet, thread):
             print()
 
 def ToCSV():   
-    with open("tx.csv","w", newline="") as f:
+    with open("Theta-Staking-Rewards/tx.csv","w", newline="") as f:
         wr = csv.writer(f)
         wr.writerow(["tx_hash", "timestamp","thetawei", "tfuelwei"])
 
