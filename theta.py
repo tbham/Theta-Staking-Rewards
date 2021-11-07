@@ -68,10 +68,6 @@ def ThetaWorker(wallet, thread):
     for i in range(1 + thread, pages + 1, thread_count):
         URL = "https://explorer.thetatoken.org:8443/api/accounttx/" + str(wallet) + "?type=" + str(tx) + "&pageNumber=" + str(i) + "&limitNumber=" + str(limit) + "&isEqualType=true"
         res = req.get(URL)
-        #print("Thread: %i, Requesting page %i of %i" %(thread,i,pages))
-        #print("Thread: %i, Request URL: %s" %(thread,URL))
-        #print("Thread: %i, Response code: %i" %(thread,res.status_code))
-        #print("Thread: %i, Response time: %i ms" %(thread,(res.elapsed.total_seconds()*1000)))
 
         print("Requesting page %i of %i" %(i,pages))
         print("Request URL: %s" %(URL))
@@ -106,15 +102,16 @@ def ToCSV():
 
         f.close()
 
-print()
-print("--------------------------------------------------------")
-print("Theta Explorer API - Staking Rewards")
-print("--------------------------------------------------------")
-print()
-print("Public Wallet Address (Not Mnemonic Phrase): ")
-wallet = input().lower()
-print()
+if __name__ == '__main__':
+    print()
+    print("--------------------------------------------------------")
+    print("Theta Explorer API - Staking Rewards")
+    print("--------------------------------------------------------")
+    print()
+    print("Public Wallet Address (Not Mnemonic Phrase): ")
+    wallet = input().lower()
+    print()
 
-queue = qu.Queue()
+    queue = qu.Queue()
 
-Theta(wallet)
+    Theta(wallet)
